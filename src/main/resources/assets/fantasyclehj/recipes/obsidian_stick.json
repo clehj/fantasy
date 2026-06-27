@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+
+    "pattern":
+    [
+        "0",
+        "0"
+    ],
+
+    "key":
+    {
+        "0":
+        {
+            "item": "minecraft:obsidian"
+        }
+    },
+
+    "result":
+    {
+        "item": "fantasyclehj:obsidian_stick",
+        "count": 1
+    }
+}

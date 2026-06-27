@@ -1,0 +1,6 @@
+{
+	"parent": "block/cross",
+	"textures": {
+		"cross": "fantasyclehj:blocks/blue_rose"
+	}
+}

@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "000",
+        "010",
+        "000"
+    ],
+    
+    "key":
+    {
+        "1":
+        {
+            "item": "minecraft:snowball"
+        },
+        "0":
+        {
+            "item": "minecraft:dye",
+            "data": 10
+        }
+    },
+    
+    "result":
+    {
+        "item": "minecraft:slime_ball",
+        "data": 1,
+        "count": 1
+    }
+}

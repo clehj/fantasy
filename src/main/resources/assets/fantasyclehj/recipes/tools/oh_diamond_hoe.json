@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "00 ",
+        " 1 ",
+        " 1 "
+    ],
+    
+    "key":
+    {
+        "1":
+        {
+            "item": "fantasyclehj:obsidian_stick"
+        },
+        "0":
+        {
+            "item": "minecraft:diamond"
+        }
+    },
+    
+    "result":
+    {
+        "item": "fantasyclehj:oh_diamond_hoe",
+        "count": 1
+    }
+}

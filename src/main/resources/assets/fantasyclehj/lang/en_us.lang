@@ -1,0 +1,19 @@
+#PARSE_ESCAPES
+#tabs
+itemGroup.fantasy=FTY
+
+item.obsidian_stick.name=obsidian_stick
+item.oh_diamond_sword.name=黑曜石柄钻石剑
+item.oh_diamond_pickaxe.name=黑曜石柄钻石镐
+item.oh_diamond_axe.name=黑曜石柄钻石斧
+item.oh_diamond_shovel.name=黑曜石柄钻石铲
+item.oh_diamond_hoe.name=黑曜石柄钻石锄
+item.fantasty_pickaxe.name=幻想之镐
+
+
+
+tile.crying_obsidian.name=Crying Obsidian
+
+tile.wet_gunpowder_block.name=Wet Gunpowder
+
+tile.blue_rose.name=Melancholy Rose

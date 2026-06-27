@@ -1,0 +1,10 @@
+{
+
+  "gunpowder.fizzle": {
+    "sounds": [
+      "placeablegunpowder:fizzle"
+    ],
+    "subtitle": "subtitles.block.gunpowder.fizzle"
+  }
+
+}

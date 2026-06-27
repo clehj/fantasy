@@ -1,0 +1,134 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url = "https://files.minecraftforge.net/maven" }
+        maven { url = "https://bmclapi2.bangbang93.com/maven" }
+        maven { url = "https://maven.minecraftforge.net" }
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = "1.0"
+group = "fantasyclehj"
+archivesBaseName = "fantasyclehj"
+
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava { sourceCompatibility = targetCompatibility = '1.8' }
+
+minecraft {
+    version = "1.12.2-14.23.5.2847"
+    runDir = "run"
+    mappings = "stable_39"
+}
+
+repositories {
+    mavenCentral()
+    maven { url = "https://maven.minecraftforge.net" }
+    maven { url 'https://jitpack.io' }
+    // flatDir 删掉了，因为不再需要本地 jar
+}
+
+dependencies {
+    // 使用作者推荐的 deobfCompile 从 JitPack 拉取
+    deobfCompile 'com.github.jbredwards:fluidlogged-api:1.12.2-Latest-SNAPSHOT'
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version, 'mcversion': project.minecraft.version
+    }
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+import net.minecraftforge.gradle.tasks.DownloadAssetsTask
+import sun.misc.SharedSecrets
+import sun.misc.Unsafe
+
+void initConstantPool(Class<?> clazz) {
+    if (clazz != null && !clazz.interface) {
+        initConstantPool clazz.superclass
+
+        def constantPool = SharedSecrets.javaLangAccess.getConstantPool clazz
+        for (i in 0..constantPool.size) {
+            try {
+                constantPool.getStringAt i
+            } catch (def ignored) {}
+        }
+    }
+}
+
+void replaceString(String str1, String str2) {
+    String.class.getDeclaredField "value" with {
+        it.setAccessible true
+        it.set str1, str2.toCharArray()
+    }
+}
+
+initConstantPool Unsafe.theUnsafe.allocateInstance(DownloadAssetsTask.GetAssetTask.class).class
+replaceString "http://resources.download.minecraft.net/", "https://resources.download.minecraft.net/"
+
+sourceSets {
+    main {
+        output.resourcesDir = file('build/combined')
+        java.outputDir = file('build/combined')
+    }
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.genIntellijRuns.doFirst {
+    def workspaceFile = file(".idea/workspace.xml")
+    workspaceFile.parentFile.mkdirs()
+    if (!workspaceFile.exists()) {
+        workspaceFile.write("""\
+        <?xml version="1.0" encoding="UTF-8"?>
+        <project version="4">
+            <component name="RunManager">
+            </component>
+        </project>
+        """.stripIndent())
+    } else {
+        def workspace = new XmlParser().parse(workspaceFile)
+        def runManager = workspace.component.findAll({ it.@name == "RunManager" })
+        if (runManager.size() == 0) {
+            workspace.appendNode("component", ["name": "RunManager"])
+        } else {
+            runManager.each {
+                it.configuration.findAll({ it.@name == "Minecraft Client" || it.@name == "Minecraft Server" }).each { configuration ->
+                    it.remove(configuration)
+                }
+            }
+        }
+        new PrintWriter(new FileWriter(workspaceFile)).withCloseable {
+            new XmlNodePrinter(it).print(workspace)
+        }
+    }
+}
+
+tasks.genIntellijRuns.doLast {
+    def workspaceFile = file(".idea/workspace.xml")
+    def workspace = new XmlParser().parse(workspaceFile)
+    workspace.component.findAll({ it.@name == "RunManager" }).each {
+        it.configuration.findAll({ it.@name == "Minecraft Client" || it.@name == "Minecraft Server" }).each {
+            it.module.@name = project.idea.module.name + '.' + project.minecraft.runSourceSet.name
+        }
+    }
+    new PrintWriter(new FileWriter(workspaceFile)).withCloseable {
+        new XmlNodePrinter(it).print(workspace)
+    }
+}
+
+compileJava {
+    options.compilerArgs += ['-Xlint:none']
+}

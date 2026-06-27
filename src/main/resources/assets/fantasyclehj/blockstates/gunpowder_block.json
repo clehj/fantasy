@@ -1,0 +1,40 @@
+{
+  "multipart": [
+    {
+      "when": { "north": "none", "east": "none", "south": "none", "west": "none" },
+      "apply": { "model": "fantasyclehj:gunpowder_dot" }
+    },
+    {
+      "when": { "north": "side|up" },
+      "apply": { "model": "fantasyclehj:gunpowder_side0" }
+    },
+    {
+      "when": { "south": "side|up" },
+      "apply": { "model": "fantasyclehj:gunpowder_side0", "y": 180 }
+    },
+    {
+      "when": { "west": "side|up" },
+      "apply": { "model": "fantasyclehj:gunpowder_side0", "y": 90 }
+    },
+    {
+      "when": { "east": "side|up" },
+      "apply": { "model": "fantasyclehj:gunpowder_side0", "y": 270 }
+    },
+    {
+      "when": { "north": "up" },
+      "apply": { "model": "fantasyclehj:gunpowder_up" }
+    },
+    {
+      "when": { "east": "up" },
+      "apply": { "model": "fantasyclehj:gunpowder_up", "y": 90 }
+    },
+    {
+      "when": { "south": "up" },
+      "apply": { "model": "fantasyclehj:gunpowder_up", "y": 180 }
+    },
+    {
+      "when": { "west": "up" },
+      "apply": { "model": "fantasyclehj:gunpowder_up", "y": 270 }
+    }
+  ]
+}

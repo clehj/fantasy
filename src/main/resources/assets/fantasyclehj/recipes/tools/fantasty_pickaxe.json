@@ -1,0 +1,41 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        " 1 ",
+        "203",
+        " 4 "
+    ],
+    
+    "key":
+    {
+        "0":
+        {
+            "item": "fantasyclehj:oh_diamond_pickaxe"
+        },
+        "1":
+        {
+            "item": "minecraft:skull",
+            "data": 5
+        },
+        "2":
+        {
+            "item": "minecraft:elytra"
+        },
+        "3":
+        {
+            "item": "minecraft:experience_bottle"
+        },
+        "4":
+        {
+            "item": "minecraft:nether_star"
+        }
+    },
+    
+    "result":
+    {
+        "item": "fantasyclehj:fantasty_pickaxe",
+        "count": 1
+    }
+}

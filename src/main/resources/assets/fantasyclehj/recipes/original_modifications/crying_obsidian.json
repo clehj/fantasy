@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "c": {
+      "item": "minecraft:obsidian"
+    },
+    "w": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "pattern": [
+    "ccc",
+    "cwc",
+    "ccc"
+  ],
+  "result": {
+    "item": "fantasyclehj:crying_obsidian",
+    "count": 8
+  }
+}
