@@ -18,22 +18,6 @@ public class FCItemsBlockModels {
             CreativeTabs.DECORATIONS
     );
 
-    public static final ItemBlock gunpowder_item = createItemBlock(
-            FCBlocks.gunpowder,
-            "gunpowder_block",
-            CreativeTabs.MISC  // 或者 CreativeTabs.MISC
-    );
-
-    public static final ItemBlock wet_gunpowder_item = createItemBlock(
-            FCBlocks.wet_gunpowder,
-            "wet_gunpowder_block",
-            CreativeTabs.MISC
-    );
-
-
-
-
-
 
 
 

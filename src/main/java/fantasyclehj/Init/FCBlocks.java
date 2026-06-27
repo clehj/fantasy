@@ -42,12 +42,5 @@ public class FCBlocks {
             0
     );
 
-    public static final Block gunpowder = new BlockGunpowder()
-            .setHardness(0.0F)
-            .setTranslationKey("gunpowder_block")
-            .setRegistryName("gunpowder_block");
 
-    public static final Block wet_gunpowder = new WetGunpowderBlock()
-            .setTranslationKey("wet_gunpowder_block")
-            .setRegistryName("wet_gunpowder_block");
 }

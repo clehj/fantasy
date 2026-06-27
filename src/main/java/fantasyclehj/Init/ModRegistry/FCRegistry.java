@@ -19,9 +19,7 @@ public class FCRegistry {
         event.getRegistry().registerAll(
                 FCBlocks.crying_obsidian,
                 FCBlocks.blue_rose,
-                FCBlocks.portal,
-                FCBlocks.gunpowder,
-                FCBlocks.wet_gunpowder
+                FCBlocks.portal
         );
     }
 
@@ -42,9 +40,7 @@ public class FCRegistry {
         // 因为 @SubscribeEvent 的执行顺序不确定，所以把所有 Item 放一起注册最安全
         event.getRegistry().registerAll(
                 FCItemsBlockModels.crying_obsidian_item,
-                FCItemsBlockModels.blue_rose_item,
-                FCItemsBlockModels.gunpowder_item,
-                FCItemsBlockModels.wet_gunpowder_item
+                FCItemsBlockModels.blue_rose_item
         );
 
 

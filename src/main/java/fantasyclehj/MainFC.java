@@ -1,7 +1,6 @@
 package fantasyclehj;
 
 import fantasyclehj.Init.FCCommands;
-import fantasyclehj.Init.GunpowderEventHandler;
 import fantasyclehj.Init.ModRegistry.FCRecips;
 import fantasyclehj.Init.ModRegistry.InitDimension;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,7 +25,6 @@ public class MainFC {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         InitDimension.registerDimensions();
-        MinecraftForge.EVENT_BUS.register(new GunpowderEventHandler());
     }
 
     @EventHandler
