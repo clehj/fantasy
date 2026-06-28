@@ -1,13 +1,14 @@
 package fantasyclehj;
 
-import fantasyclehj.Init.FCCommands;
-import fantasyclehj.Init.ModRegistry.FCRecips;
-import fantasyclehj.Init.ModRegistry.InitDimension;
-import net.minecraftforge.common.MinecraftForge;
+import fantasyclehj.registry.core.AutoRegistry;
+import fantasyclehj.init.FCBlocks;
+import fantasyclehj.init.FCCommands;
+import fantasyclehj.init.FCItems;
+import fantasyclehj.init.FCRecipes;
+import fantasyclehj.init.DimensionRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
@@ -24,20 +25,19 @@ public class MainFC {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        InitDimension.registerDimensions();
+        DimensionRegistry.register();
+        AutoRegistry.scanAndCollect(FCBlocks.class, FCItems.class);
+
+        //GameRegistry.registerWorldGenerator(new FCWorldGen(), 0); // 注册世界生成器
     }
 
     @EventHandler
-    public void Init(FMLInitializationEvent event) {
-        FCRecips.Init();
-    }
-
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
+    public void init(FMLInitializationEvent event) {
+        FCRecipes.init();
     }
 
     @EventHandler
     public void serverStarting(FMLServerStartingEvent event) {
-        FCCommands.registerCommands(event);
+        FCCommands.register(event);
     }
 }
