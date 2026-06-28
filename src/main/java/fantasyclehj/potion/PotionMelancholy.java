@@ -15,7 +15,7 @@ public class PotionMelancholy extends Potion {
     private static final ResourceLocation ICON = new ResourceLocation("fantasyclehj", "textures/gui/melancholy_icon.png");
 
     public PotionMelancholy() {
-        super(false, 0x8b008b); // 深紫罗兰
+        super(false, 0x006994); // 深紫罗兰
         this.setPotionName("potion.melancholy");
         this.setRegistryName("fantasyclehj", "melancholy");
     }
