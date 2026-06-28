@@ -24,7 +24,7 @@ public class PotionMelancholy extends Potion {
     public boolean isReady(int duration, int amplifier) {
         // 每 40 tick (2秒) 触发一次效果
         int interval = 30 >> amplifier;
-        return interval > 0 ? duration % interval == 0 : true;
+        return interval == 0 || duration % interval == 0;
     }
 
     @Override
