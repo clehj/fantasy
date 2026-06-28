@@ -1,4 +1,3 @@
-# PARSE_ESCAPES
 itemGroup.fantasy=幻想大厅
 
 item.obsidian_stick.name=黑曜石棒
@@ -9,6 +8,36 @@ item.oh_diamond_shovel.name=黑曜石柄钻石铲
 item.oh_diamond_hoe.name=黑曜石柄钻石锄
 item.fantasty_pickaxe.name=幻想之镐
 
-tile.crying_obsidian.name=哭泣的黑曜石
+potion.melancholy=忧郁
 
+potion.effect.melancholy=忧郁药水
+potion.effect.long_melancholy=忧郁药水
+potion.effect.strong_melancholy=忧郁药水
+
+splash_potion.effect.melancholy=喷溅型忧郁药水
+splash_potion.effect.long_melancholy=喷溅型忧郁药水
+splash_potion.effect.strong_melancholy=喷溅型忧郁药水
+
+lingering_potion.effect.melancholy=滞留型忧郁药水
+lingering_potion.effect.long_melancholy=滞留型忧郁药水
+lingering_potion.effect.strong_melancholy=滞留型忧郁药水
+
+tipped_arrow.effect.melancholy=忧郁之箭
+tipped_arrow.effect.long_melancholy=忧郁之箭
+tipped_arrow.effect.strong_melancholy=忧郁之箭
+
+
+
+tile.crying_obsidian.name=哭泣的黑曜石
+tile.portal.name=传送门
 tile.blue_rose.name=忧郁玫瑰
+
+# 方块
+tile.item_spawner.name=物品刷怪笼
+tile.exp_spawner.name=经验刷怪笼
+
+message.speed=速度已设置为: %d
+message.speed.noless=速度不能低于 1！
+message.amount=数量已设置为: %d
+message.amount.nomore=数量不能超过 %d！
+message.amount.noless=数量不能低于 1！

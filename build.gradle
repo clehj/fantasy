@@ -87,6 +87,10 @@ jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 tasks.genIntellijRuns.doFirst {
     def workspaceFile = file(".idea/workspace.xml")
     workspaceFile.parentFile.mkdirs()

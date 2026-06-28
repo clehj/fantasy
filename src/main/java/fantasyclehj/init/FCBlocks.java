@@ -32,4 +32,28 @@ public class FCBlocks {
             CreativeTabs.MISC,
             -1F, 6000000F, null, 0, 0
     );
+
+    @AutoRegister(name = "item_spawner", tab = "fantasy")
+    public static final Block item_spawner = BlockBuilder.create(
+            new ItemSpawnerBlock(),
+            "item_spawner",
+            FCCreativeTab.FTY,
+            20.0F,
+            6000000.0F,
+            "pickaxe",
+            3,
+            0
+    );
+
+    @AutoRegister(name = "exp_spawner", tab = "fantasy")
+    public static final Block exp_spawner = BlockBuilder.create(
+            new ExpSpawnerBlock(),
+            "exp_spawner",
+            FCCreativeTab.FTY,
+            20.0F,
+            6000000.0F,
+            "pickaxe",
+            3,
+            0
+    );
 }

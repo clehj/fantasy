@@ -1,18 +1,38 @@
-#PARSE_ESCAPES
-#tabs
-itemGroup.fantasy=FTY
+item.obsidian_stick.name=Obsidian Stick
+item.oh_diamond_sword.name=Obsidian Diamond Sword
+item.oh_diamond_pickaxe.name=Obsidian Diamond Pickaxe
+item.oh_diamond_axe.name=Obsidian Diamond Axe
+item.oh_diamond_shovel.name=Obsidian Diamond Shovel
+item.oh_diamond_hoe.name=Obsidian Diamond Hoe
 
-item.obsidian_stick.name=obsidian_stick
-item.oh_diamond_sword.name=黑曜石柄钻石剑
-item.oh_diamond_pickaxe.name=黑曜石柄钻石镐
-item.oh_diamond_axe.name=黑曜石柄钻石斧
-item.oh_diamond_shovel.name=黑曜石柄钻石铲
-item.oh_diamond_hoe.name=黑曜石柄钻石锄
-item.fantasty_pickaxe.name=幻想之镐
+potion.melancholy=Melancholy
 
+potion.effect.melancholy=Melancholy Potion
+potion.effect.long_melancholy=Melancholy Potion
+potion.effect.strong_melancholy=Melancholy Potion
 
+splash_potion.effect.melancholy=Splash Melancholy Potion
+splash_potion.effect.long_melancholy=Splash Melancholy Potion
+splash_potion.effect.strong_melancholy=Splash Melancholy Potion
+
+lingering_potion.effect.melancholy=Lingering Melancholy Potion
+lingering_potion.effect.long_melancholy=Lingering Melancholy Potion
+lingering_potion.effect.strong_melancholy=Lingering Melancholy Potion
+
+tipped_arrow.effect.melancholy=Arrow of Melancholy
+tipped_arrow.effect.long_melancholy=Arrow of Melancholy
+tipped_arrow.effect.strong_melancholy=Arrow of Melancholy
 
 tile.crying_obsidian.name=Crying Obsidian
+tile.blue_rose.name=Blue Rose
+tile.portal.name=Portal
+tile.item_spawner.name=Item Spawner
+tile.exp_spawner.name=EXP Spawner
 
+itemGroup.fantasy=Fantasy Hall
 
-tile.blue_rose.name=Melancholy Rose
+message.speed=Speed set to: %d
+message.speed.noless=Speed cannot be less than 1!
+message.amount=Amount set to: %d
+message.amount.nomore=Amount cannot exceed %d!
+message.amount.noless=Amount cannot be less than 1!

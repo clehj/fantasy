@@ -2,6 +2,7 @@ package fantasyclehj.registry.core;
 
 import fantasyclehj.MainFC;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -9,7 +10,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 
 import java.lang.reflect.Field;
 
@@ -24,10 +24,7 @@ public class AutoRegistryModels {
     }
 
     private static void registerAllModels() {
-        // 方法1：通过 FCBlocks 注册方块模型
         registerBlockModels();
-
-        // 方法2：通过 FCItems 注册物品模型
         registerItemModels();
     }
 
@@ -62,7 +59,6 @@ public class AutoRegistryModels {
                     Item item = (Item) field.get(null);
                     if (item == null) continue;
 
-                    // 检查是否有注册名
                     if (item.getRegistryName() != null) {
                         registerModel(item);
                         System.out.println("[AutoRegistryModels] 注册物品模型: " + item.getRegistryName());
